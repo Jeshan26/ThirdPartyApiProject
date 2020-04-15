@@ -1,6 +1,4 @@
 //Javascript document 
-
-
 var map, infoWindow;
 
 function initMap() {
@@ -11,8 +9,6 @@ function initMap() {
             lng: -79.6767154
         },
         zoom: 8.3,
-    
-
         // this creates custom styles for my map     here its like dark mode
         styles: [{
                 "elementType": "geometry",
@@ -151,11 +147,11 @@ function initMap() {
     // i can create as many marker by just adding the position and name below 
     var markers = [{
             coords: {
-               
+
                 lat: 44.5007687,
                 lng: -80.2169047
             },
-            icon: 'PICS/icons.png',
+            icon: "PICS/icons.png",
             title: 'Collingwood'
         },
         {
@@ -163,15 +159,15 @@ function initMap() {
                 lat: 43.653226,
                 lng: -79.3831843
             },
-            icon: 'PICS/icons.png',
+            icon: "PICS/icons.png",
             title: 'Toronto'
         }, {
             coords: {
                 lat: 43.8363372,
                 lng: -79.8744836
             },
-            icon: 'PICS/icons.png',
-            title: 'Caledon'
+            icon: "PICS/icons.png",
+            title: "Caledon"
         }
 
     ]
@@ -179,7 +175,7 @@ function initMap() {
     for (var i = 0; i < markers.length; i++) {
         addMarker(markers[i]);
     }
-// function to add marker 
+    // function to add marker 
     function addMarker(object) {
         var marker = new google.maps.Marker({
             position: object.coords,
@@ -194,13 +190,13 @@ function initMap() {
 //registering buttons for event handling purpose
 // var buttons=document.getElementsByClassName("desc");
 
-let weather1= document.getElementById("weather");
-let weather2= document.getElementById("weather1");
-let weather3= document.getElementById("weather2");
+let weather1 = document.getElementById("weather");
+let weather2 = document.getElementById("weather1");
+let weather3 = document.getElementById("weather2");
 
-var input= document.querySelector('input');
+var input = document.querySelector('input');
 let searchWeather = document.getElementById("searchWeather");
-let btns= document.getElementsByClassName("weather");
+let btns = document.getElementsByClassName("weather");
 let btn = document.getElementById("desc");
 let btn1 = document.getElementById("avail");
 let btn2 = document.getElementById("desc1");
@@ -214,29 +210,27 @@ let Host = document.getElementById("host-rating");
 
 
 
-  // browser speech API
-  var speechbtn=document.getElementById('btn123');
-  speechbtn.addEventListener('click',sound);
-  
-  function sound(){
-  var syn= window.speechSynthesis;
-  var speak="This is Module-5 customised with more browser API'S and third party API'S and you can also see the weather of following places. Moreover you can additionally see location in the map and also  search in the Textfield to see the weather of any City.";
-  var utterthis= new SpeechSynthesisUtterance(speak);
-  utterthis.pitch=1.5;
-  utterthis.rate=1;
-  syn.speak(utterthis);
-  
-  }
-  
+// browser speech API
+var speechbtn = document.getElementById("btn123");
+speechbtn.addEventListener("click", sound);
+
+function sound() {
+    var syn = window.speechSynthesis;
+    var speak = "This is Module-5 customised with more browser API'S and third party API'S and you can also see the weather of following places. Moreover you can additionally see location in the map and also  search in the Textfield to see the weather of any City.";
+    var utterthis = new SpeechSynthesisUtterance(speak);
+    utterthis.pitch = 1.5;
+    utterthis.rate = 1;
+    syn.speak(utterthis);
+
+}
 
 document.getElementById("date").innerHTML = Date();
-
 // sound on button click  Another browser api
 var ding = new Audio();
 ding.src = "sound.mp3";
 
-var error= new Audio();
-error.src="error.wav";
+var error = new Audio();
+error.src = "error.wav";
 
 // class vacation template
 class Vacation {
@@ -268,7 +262,7 @@ Vacation.prototype.description = function() {
 //class vacation availability method
 Vacation.prototype.available = function() {
     name = this.name;
-    propertyAvailability = "Currently "+ name+" property is: " + this.availability;
+    propertyAvailability = "Currently " + name + " property is: " + this.availability;
     let main = document.getElementById('main');
     let p = document.createElement('p');
     p.innerHTML = propertyAvailability;
@@ -291,7 +285,7 @@ class SpecialProperty extends Vacation {
 SpecialProperty.prototype.newPrice = function() {
     name = this.name;
     discountPercent = this.discount / 100;
-    newPrice = "Grab the oppurtunity to to visit "+name+" this place at our discounted price which is :" + ((this.price) - (this.price * discountPercent));
+    newPrice = "Grab the oppurtunity to to visit " + name + " this place at our discounted price which is :" + ((this.price) - (this.price * discountPercent));
     let main = document.getElementById('main');
     let p = document.createElement('p');
     p.innerHTML = newPrice;
@@ -307,7 +301,7 @@ class SuperHost extends Vacation {
     constructor(name, price, rating, location, rooms, availability, features, host) {
         super(name, price, rating, location, rooms, availability, features);
         this.host = host;
-        
+
     }
 }
 
@@ -365,7 +359,7 @@ Host.addEventListener("click", function() {
     superhost.hostratings();
 });
 
-searchWeather.addEventListener('click',getWeather);
+searchWeather.addEventListener('click', getWeather);
 
 //   weather1.onclick=getWeather;
 //   weather2.onclick=getWeather;
@@ -374,77 +368,72 @@ searchWeather.addEventListener('click',getWeather);
 
 
 
- for (let i = 0; i < btns.length; i++) {
-     btns[i].onclick=getWeather;
-   
-  
- }
- 
- 
- function getWeather(e){
+for (let i = 0; i < btns.length; i++) {
+    btns[i].onclick = getWeather;
+
+
+}
+
+
+function getWeather(e) {
 
     var cityname;
     //use event object, this will target the buton that is clicked on 
-    let whichButton = e.target; 
+    let whichButton = e.target;
     console.log(whichButton);
     // I added a class to the different buttons in the HTML 
     // the contains method checks to see if a class exists 
-    if(whichButton.classList.contains('weather1')) {
-      cityname='Collingwood';
+    if (whichButton.classList.contains('weather1')) {
+        cityname = 'Collingwood';
+    } else if (whichButton.classList.contains('weather2')) {
+        cityname = 'Collingwood';
+    } else if (whichButton.classList.contains('weather3')) {
+        cityname = 'Toronto';
+    } else if (whichButton.classList.contains('weather4')) {
+        cityname = 'Caledon';
     }
-    else if (whichButton.classList.contains('weather2')) {
-      cityname='Collingwood';
-    }
-
-    else if (whichButton.classList.contains('weather3')) {
-        cityname='Toronto';
-      }
-
-      else if (whichButton.classList.contains('weather4')) {
-        cityname='Caledon';
-      }
     //default 
     else {
-      cityname=input.value;
-      input.value="";
+        cityname = input.value;
+        input.value = "";
     }
-  
-    var apicall="https://api.openweathermap.org/data/2.5/weather?q="+cityname+"&appid=d120b3181941ff233822b79247a405e4&units=metric";
-		/*Create a new XHR object */
-		var request = new XMLHttpRequest();
-		/* Open a new request using the request() method */
-		request.open('GET', apicall);
-		/* Set JavaScript to accept JSON from the server */
-		request.responseType = 'json';
-		/* Send the request with the send() method */
-		request.send();
 
-		/*Add an event handler that listens for the onload event of the JSON file/object */
-		request.onload = function() {
-      //store the response in plenty of pizza 
-            var data = request.response;
-            if (data.cod==400 || data.cod==404) {
-                error.play();
-                alert("City "+cityname +" does not exists. Please put correct spellings of the city")
-            }
-      //let's check it out in the console 
-			console.log(data);
-      //when the response is ready, invoke weatherdata function, passing data as the object 
-      weatherdata(data);
-        };
-        
-        function weatherdata(data) {
-        var cityName= data.name;
-        var descrip= data.weather[0].description;
-        var maxtemp= data.main.temp_max;
+    var apicall = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&appid=d120b3181941ff233822b79247a405e4&units=metric";
+    /*Create a new XHR object */
+    var request = new XMLHttpRequest();
+    /* Open a new request using the request() method */
+    request.open('GET', apicall);
+    /* Set JavaScript to accept JSON from the server */
+    request.responseType = 'json';
+    /* Send the request with the send() method */
+    request.send();
+
+    /*Add an event handler that listens for the onload event of the JSON file/object */
+    request.onload = function() {
+        //store the response in plenty of pizza 
+        var data = request.response;
+        if (data.cod == 400 || data.cod == 404) {
+            error.play();
+            alert("City " + cityname + " does not exists. Please put correct spellings of the city")
+        }
+        //let's check it out in the console 
+        console.log(data);
+        //when the response is ready, invoke weatherdata function, passing data as the object 
+        weatherdata(data);
+    };
+
+    function weatherdata(data) {
+        var cityName = data.name;
+        var descrip = data.weather[0].description;
+        var maxtemp = data.main.temp_max;
         console.log(cityName);
         let main = document.getElementById('main');
-    let p = document.createElement('p');
-    let des=" The weather at " +cityName+ " is currently " + descrip+" and max temperature is "+ maxtemp+"\u00B0C.";
-    p.innerHTML = des;
-    main.appendChild(p);
-    ding.play();
-
-        }
+        let p = document.createElement('p');
+        let des = " The weather at " + cityName + " is currently " + descrip + " and max temperature is " + maxtemp + "\u00B0C.";
+        p.innerHTML = des;
+        main.appendChild(p);
+        ding.play();
 
     }
+
+}
