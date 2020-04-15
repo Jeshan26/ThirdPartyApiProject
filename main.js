@@ -1,25 +1,4 @@
-//Javascript document 
 
-//registering buttons for event handling purpose
-// var buttons=document.getElementsByClassName("desc");
-
-let weather1 = document.getElementById("weather");
-let weather2 = document.getElementById("weather1");
-let weather3 = document.getElementById("weather2");
-
-var input = document.querySelector('input');
-let searchWeather = document.getElementById("searchWeather");
-let btns = document.getElementsByClassName("weather");
-let btn = document.getElementById("desc");
-let btn1 = document.getElementById("avail");
-let btn2 = document.getElementById("desc1");
-let btn3 = document.getElementById("avail1");
-let btn4 = document.getElementById("desc2");
-let btn5 = document.getElementById("avail2");
-let PriceBtn = document.getElementById("price");
-let btn6 = document.getElementById("desc3");
-let btn7 = document.getElementById("avail3");
-let Host = document.getElementById("host-rating");
 
 var map, infoWindow;
 
@@ -209,7 +188,28 @@ function initMap() {
 }
 
 
+//Javascript document 
 
+//registering buttons for event handling purpose
+// var buttons=document.getElementsByClassName("desc");
+
+let weather1 = document.getElementById("weather");
+let weather2 = document.getElementById("weather1");
+let weather3 = document.getElementById("weather2");
+
+var input = document.querySelector('input');
+let searchWeather = document.getElementById("searchWeather");
+let btns = document.getElementsByClassName("weather");
+let btn = document.getElementById("desc");
+let btn1 = document.getElementById("avail");
+let btn2 = document.getElementById("desc1");
+let btn3 = document.getElementById("avail1");
+let btn4 = document.getElementById("desc2");
+let btn5 = document.getElementById("avail2");
+let PriceBtn = document.getElementById("price");
+let btn6 = document.getElementById("desc3");
+let btn7 = document.getElementById("avail3");
+let Host = document.getElementById("host-rating");
 
 
 // browser speech API
